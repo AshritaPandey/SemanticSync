@@ -20,7 +20,7 @@ python -m venv venv
 .\venv\Scripts\activate  # Windows
 
 # Install dependencies
-pip install fastapi uvicorn sentence-transformers scikit-learn pandas
+pip install -r requirements.txt
 
 # Start the server
 python main.py
