@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #0a0b10;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --accent-primary: #00d2ff;
+  --accent-secondary: #3a7bd5;
+  --text-main: #f8f9fa;
+  --text-muted: #adb5bd;
+  --high-sim: #2ecc71;
+  --med-sim: #f1c40f;
+  --low-sim: #e74c3c;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-[20px];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#00d2ff] to-[#3a7bd5] bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#00d2ff] to-[#3a7bd5] rounded-xl text-white font-semibold cursor-pointer transition-all hover:-translate-y-[2px] hover:shadow-[0_10px_20px_rgba(0,210,255,0.3)];
+  }
+
+  .textarea-custom {
+    @apply bg-white/[0.03] border border-white/10 rounded-xl p-4 text-white font-outfit outline-none transition-all focus:border-[#00d2ff];
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
